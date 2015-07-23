@@ -10,14 +10,15 @@
 </div>
 </nav>
 <!-- This is how to read information from the database -->
-<table class="table table-border table-hover">
-	<caption style="text_algin: center">MY RECORDS</caption>
-	<thead>
+<div>
+<table class="table table-bordered table-hover" cellpadding="10" cellspacing="0">
+	<caption class="col-sm-offset-5"><h2>MY RECORDS</h2></caption>
+	<thead><strong>
 		<td>NAME</td>
 		<td>TITLE</td>
 		<td>CATEGORY</td>
 		<td>TIME</td>
-	</thead>
+	</strong></thead>
 	<tbody>
 	<% @pag.each do |g| %>
 		<td><%= g.name %></td>
@@ -27,3 +28,4 @@
 		 <% end %> 
 	</tbody>
 </table>
+</div>
