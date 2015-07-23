@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+<div class="container">
+<ul class="nav navbar-nav">
+	<li class="active"><%= link_to "Home", root_path %></li>	
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+	<li><%= link_to "Admin", rails_admin_path %></li>
+</ul>
+</div>
+</nav>
+<!-- This is how to read information from the database -->
+<table class="table table-border table-hover">
+	<caption style="text_algin: center">MY RECORDS</caption>
+	<thead>
+		<td>NAME</td>
+		<td>TITLE</td>
+		<td>CATEGORY</td>
+		<td>TIME</td>
+	</thead>
+	<tbody>
+	<% @pag.each do |g| %>
+		<td><%= g.name %></td>
+		<td><%= g.title %></td>
+		<td><%= g.category %></td>
+		<td><%= time_ago_in_words(g.created_at, include_seconds: true) %> ago</td>
+		 <% end %> 
+	</tbody>
+</table>
